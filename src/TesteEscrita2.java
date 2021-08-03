@@ -2,11 +2,12 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class TesteEscrita {
+public class TesteEscrita2 {
 
 	public static void main(String[] args) throws IOException {
 
@@ -15,15 +16,18 @@ public class TesteEscrita {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("texto-ti.txt")));
 
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("text-saida.txt")));
-		
+		BufferedWriter bw2 = new BufferedWriter(new FileWriter("fw-saida.txt"));
+
+		FileWriter fw = new FileWriter("fw-saida.txt");
+
 		bw.write("Great ability without discretion comes almost invariably to a tragic end.");
-		bw.newLine();
+		bw.write(System.lineSeparator());
 		bw.newLine();
 		bw.write("Why fear death? It is the most beautiful adventure in life.");
-		bw.newLine();
+		bw.write(System.lineSeparator());
 		bw.write("Conversa...");
-		
-		
+		bw.write(System.lineSeparator());
+
 		bw.close();
 	}
 
